@@ -3,6 +3,7 @@ import Header from "./components/header";
 import Search from "./components/Search";
 import { useState } from "react";
 import ImageCard from "./components/ImageCards";
+import { Container, Row, Col } from "react-bootstrap";
 
 const UNSPLASH_KEY = process.env.REACT_APP_UNSPLASH_KEY;
 
@@ -29,6 +30,11 @@ const App = () => {
     setSearchWord("");
   };
 
+  const handleDelete = (imageId) => {
+    console.log(imageId);
+    setImages(images.filter((image) => image.id !== imageId));
+  };
+
   return (
     <div>
       <Header tittle="Images Gallery"></Header>
@@ -37,9 +43,15 @@ const App = () => {
         setSearchWord={setSearchWord}
         handleSubmit={handleSearchSubmit}
       />
-      {images.map((image, i) => (
-        <ImageCard key={i} image={image} />
-      ))}
+      <Container className="mt-5">
+        <Row xs={1} md={2} lg={3}>
+          {images.map((image, i) => (
+            <Col className="pb-3" key={i}>
+              <ImageCard image={image} handleDelete={handleDelete} />
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </div>
   );
 };
