@@ -1,12 +1,14 @@
 import React from 'react'
-import {Navbar} from 'react-bootstrap'
-import styles from './header.module.css'
+import {Navbar,Container} from 'react-bootstrap'
+import styles from '../components/style/mainPage.module.css'
 
 const Header = (props) => {
     return (  
-        <div>  
-        <Navbar bg="light" data-bs-theme="light">
-            <Navbar.Brand href="/" className={styles.nav}>{props.tittle}</Navbar.Brand>
+        <div>
+        <Navbar className={styles.navColor} data-bs-theme="light">
+            <Container>
+                <Navbar.Brand href="/" className={styles.nav}>{props.tittle}</Navbar.Brand>
+            </Container>
         </Navbar>
         </div> 
     )

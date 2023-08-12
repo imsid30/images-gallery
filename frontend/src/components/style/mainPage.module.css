@@ -1,0 +1,19 @@
+.nav {
+    margin-left: 15px;
+    font-size:25px;
+}
+.navColor{
+    background: lightblue;
+}
+.search{
+    
+    margin-top: 10px;
+    margin-left: 25%;
+    width: 35%;
+    
+}
+.searchbox{
+    align-items: center;
+    justify-content: center;
+
+}
